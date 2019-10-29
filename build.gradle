@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.bundling.Jar
+
 plugins {
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'java'
@@ -21,8 +23,6 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
-
-
 }
 
 repositories {
@@ -30,6 +30,25 @@ repositories {
 	mavenCentral()
 	maven { url "http://repo.spring.io/libs-release" }
 }
+//打包源码
+task sourcesJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+artifacts { archives sourcesJar }
+
+sourceSets {
+	main {
+		java { srcDir 'src/main/java' }
+		resources { srcDir 'src/main/resources' }
+	}
+	test {
+		java { srcDir 'src/test/java' }
+		resources { srcDir 'src/test/resources' }
+	}
+}
+
 
 dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
@@ -95,4 +114,22 @@ task mybatisGenerator {
 		}
 	}
 }
+
+
+// 上传到nexus jar 包
+//uploadArchives {
+//	repositories {
+//		mavenDeployer {
+//			//userName  和 password 为maven的用户名和密码
+//			repository(url: "http://172.30.10.160:8081/nexus/content/repositories/snapshots/") {
+//				authentication(userName: "deploy", password: "deploy123")
+//			}
+//			pom.project {
+//				name=project.name
+//				packaging='jar'
+//				description='a test'
+//			}
+//		}
+//	}
+//}
 
