@@ -1,0 +1,98 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+group = 'com.msl'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	mybatisGenerator
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+
+
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+//	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+//	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+//	implementation 'org.springframework.kafka:spring-kafka'
+	compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	//mybatisGenerator 依赖(用于生成mybatis代码)
+	mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.2'
+	mybatisGenerator 'mysql:mysql-connector-java:5.1.38'
+	mybatisGenerator 'tk.mybatis:mapper:3.3.1'
+}
+
+
+//读取参数配置
+def getDbProperties = {
+	def properties = new Properties()
+	file("src/main/resources/mybatis/db-mysql.properties").withInputStream { inputStream ->
+		properties.load(inputStream)
+	}
+	properties;
+}
+//通过gradle读取配置信息，ant 配置xml 并执行java 生成
+task mybatisGenerator {
+	def properties = getDbProperties()
+	ant.properties['targetProject'] = projectDir.path
+	ant.properties['driverClass'] = properties.getProperty("jdbc.driverClassName")
+	ant.properties['connectionURL'] = properties.getProperty("jdbc.url")
+	ant.properties['userId'] = properties.getProperty("jdbc.user")
+	ant.properties['password'] = properties.getProperty("jdbc.pass")
+	ant.properties['src_main_java'] = sourceSets.main.java.srcDirs[0].path
+	ant.properties['src_main_resources'] = sourceSets.main.resources.srcDirs[0].path
+	ant.properties['modelPackage'] = properties.getProperty("package.model")
+	ant.properties['mapperPackage'] = properties.getProperty("package.mapper")
+	ant.properties['sqlMapperPackage'] =properties.getProperty("package.xml")
+	ant.taskdef(
+			name: 'mbgenerator',
+			classname: 'org.mybatis.generator.ant.GeneratorAntTask',
+			classpath: configurations.mybatisGenerator.asPath
+	)
+	ant.mbgenerator(overwrite: true,
+			configfile: 'src/main/resources/mybatis/generatorConfig.xml', verbose: true) {
+		propertyset {
+			propertyref(name: 'targetProject')
+			propertyref(name: 'userId')
+			propertyref(name: 'driverClass')
+			propertyref(name: 'connectionURL')
+			propertyref(name: 'password')
+			propertyref(name: 'src_main_java')
+			propertyref(name: 'src_main_resources')
+			propertyref(name: 'modelPackage')
+			propertyref(name: 'mapperPackage')
+			propertyref(name: 'sqlMapperPackage')
+		}
+	}
+}
+
