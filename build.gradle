@@ -56,7 +56,7 @@ dependencies {
 //读取参数配置
 def getDbProperties = {
 	def properties = new Properties()
-	file("src/main/resources/mybatis/db-mysql.properties").withInputStream { inputStream ->
+	file("src/main/resources/generatorOfmybatis/db-mysql.properties").withInputStream { inputStream ->
 		properties.load(inputStream)
 	}
 	properties;
@@ -80,7 +80,7 @@ task mybatisGenerator {
 			classpath: configurations.mybatisGenerator.asPath
 	)
 	ant.mbgenerator(overwrite: true,
-			configfile: 'src/main/resources/mybatis/generatorConfig.xml', verbose: true) {
+			configfile: 'src/main/resources/generatorOfmybatis/generatorConfig.xml', verbose: true) {
 		propertyset {
 			propertyref(name: 'targetProject')
 			propertyref(name: 'userId')
