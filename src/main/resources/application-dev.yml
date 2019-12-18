@@ -8,9 +8,9 @@ spring:
     datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
       #测试环境
-      url: jdbc:mysql://localhost:3306/yunpay?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      url: jdbc:mysql://localhost:3306/msl?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: 123
+      password: 12345678
     http:
       converters:
         preferred-json-mapper: fastjson

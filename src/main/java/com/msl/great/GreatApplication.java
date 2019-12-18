@@ -3,12 +3,15 @@ package com.msl.great;
 
 import com.msl.great.config.MybatisConfig;
 import com.msl.great.config.ParamerConfig;
+import com.msl.netty.NettyServer;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
+
+import java.net.InetSocketAddress;
 
 
 //@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
@@ -24,6 +27,9 @@ public class GreatApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(GreatApplication.class, args);
+        //启动服务端
+        NettyServer nettyServer = new NettyServer();
+        nettyServer.start(new InetSocketAddress("127.0.0.1", 8090));
     }
 
 }

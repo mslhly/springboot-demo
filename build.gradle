@@ -1,8 +1,9 @@
-import org.gradle.api.tasks.bundling.Jar
+//import org.gradle.api.tasks.bundling.Jar
 
 plugins {
 	id 'org.springframework.boot' version '2.1.6.RELEASE'
 	id 'java'
+	id "com.arenagod.gradle.MybatisGenerator" version "1.4"
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -49,6 +50,10 @@ sourceSets {
 	}
 }
 
+mybatisGenerator {
+	verbose = true
+	configFile = 'src/main/resources/generatorOfmybatis/generatorConfig.xml'
+}
 
 dependencies {
 //	implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
@@ -65,54 +70,21 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	//netty
+	implementation 'io.netty:netty-all:4.1.36.Final'
 	//mybatisGenerator 依赖(用于生成mybatis代码)
-	mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.2'
-	mybatisGenerator 'mysql:mysql-connector-java:5.1.38'
-	mybatisGenerator 'tk.mybatis:mapper:3.3.1'
-}
+	mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.7'
+	mybatisGenerator 'mysql:mysql-connector-java:5.1.46'
+	mybatisGenerator 'tk.mybatis:mapper:4.0.3'
 
-
-//读取参数配置
-def getDbProperties = {
-	def properties = new Properties()
-	file("src/main/resources/generatorOfmybatis/db-mysql.properties").withInputStream { inputStream ->
-		properties.load(inputStream)
-	}
-	properties;
-}
-//通过gradle读取配置信息，ant 配置xml 并执行java 生成
-task mybatisGenerator {
-	def properties = getDbProperties()
-	ant.properties['targetProject'] = projectDir.path
-	ant.properties['driverClass'] = properties.getProperty("jdbc.driverClassName")
-	ant.properties['connectionURL'] = properties.getProperty("jdbc.url")
-	ant.properties['userId'] = properties.getProperty("jdbc.user")
-	ant.properties['password'] = properties.getProperty("jdbc.pass")
-	ant.properties['src_main_java'] = sourceSets.main.java.srcDirs[0].path
-	ant.properties['src_main_resources'] = sourceSets.main.resources.srcDirs[0].path
-	ant.properties['modelPackage'] = properties.getProperty("package.model")
-	ant.properties['mapperPackage'] = properties.getProperty("package.mapper")
-	ant.properties['sqlMapperPackage'] =properties.getProperty("package.xml")
-	ant.taskdef(
-			name: 'mbgenerator',
-			classname: 'org.mybatis.generator.ant.GeneratorAntTask',
-			classpath: configurations.mybatisGenerator.asPath
-	)
-	ant.mbgenerator(overwrite: true,
-			configfile: 'src/main/resources/generatorOfmybatis/generatorConfig.xml', verbose: true) {
-		propertyset {
-			propertyref(name: 'targetProject')
-			propertyref(name: 'userId')
-			propertyref(name: 'driverClass')
-			propertyref(name: 'connectionURL')
-			propertyref(name: 'password')
-			propertyref(name: 'src_main_java')
-			propertyref(name: 'src_main_resources')
-			propertyref(name: 'modelPackage')
-			propertyref(name: 'mapperPackage')
-			propertyref(name: 'sqlMapperPackage')
-		}
-	}
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.17'
+	compile group: 'org.apache.pdfbox', name: 'fontbox', version: '2.0.17'
+//	compile group: 'fr.opensagres.xdocreport', name: 'org.apache.poi.xwpf.converter.pdf', version: '1.0.4'
+//	compile group: 'com.itextpdf', name: 'itext-asian', version: '5.2.0'
+//	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.6'
+//	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+//	implementation files('lib/*.jar')
+	implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
 

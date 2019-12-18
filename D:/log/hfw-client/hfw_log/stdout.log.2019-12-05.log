@@ -1,0 +1,6 @@
+2019-12-05 15:41:58,214 [INFO] [restartedMain] com.msl.great.ClientApplication [StartupInfoLogger.java : 50] Starting ClientApplication on msldeMacBook-Pro.local with PID 47638 (/Users/msl/work/springboot/nettySpringbootClient/build/classes/java/main started by msl in /Users/msl/work/springboot/springboot-demo)
+2019-12-05 15:41:58,227 [DEBUG] [restartedMain] com.msl.great.ClientApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-12-05 15:41:58,228 [INFO] [restartedMain] com.msl.great.ClientApplication [SpringApplication.java : 650] The following profiles are active: dev
+2019-12-05 15:41:58,381 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-05 15:41:58,382 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-05 15:45:01,280 [WARN] [RMI TCP Connection(1)-127.0.0.1] javax.management.remote.misc [ClassLogger.java : 215] The server has decided to close this client connection.

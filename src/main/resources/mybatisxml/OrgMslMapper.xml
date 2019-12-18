@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msl.mybatis.mapper.OrgMslMapper">
+  <resultMap id="BaseResultMap" type="com.msl.mybatis.entity.OrgMsl">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="msl" jdbcType="VARCHAR" property="msl" />
+    <result column="hly" jdbcType="VARCHAR" property="hly" />
+  </resultMap>
+  <insert id="insert" parameterType="com.msl.mybatis.entity.OrgMsl">
+    insert into org_msl (id, msl, hly)
+    values (#{id,jdbcType=INTEGER}, #{msl,jdbcType=VARCHAR}, #{hly,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, msl, hly
+    from org_msl
+  </select>
+</mapper>

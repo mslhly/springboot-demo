@@ -1,0 +1,175 @@
+2019-11-20 15:34:29,416 [INFO] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 50] Starting GreatApplication on msldeMacBook-Pro.local with PID 12039 (/Users/msl/work/springboot/springboot-demo/build/classes/java/main started by msl in /Users/msl/work/springboot/springboot-demo)
+2019-11-20 15:34:29,421 [DEBUG] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-11-20 15:34:29,421 [INFO] [restartedMain] com.msl.great.GreatApplication [SpringApplication.java : 650] The following profiles are active: dev
+2019-11-20 15:34:29,571 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 15:34:29,572 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-20 15:34:30,345 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 15:34:30,349 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 15:34:30,388 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2019-11-20 15:34:30,940 [INFO] [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e5f9928] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:34:31,346 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 90] Tomcat initialized with port(s): 8081 (http)
+2019-11-20 15:34:31,380 [INFO] [restartedMain] org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2019-11-20 15:34:31,381 [INFO] [restartedMain] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-11-20 15:34:31,474 [INFO] [restartedMain] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/spring-boot] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2019-11-20 15:34:31,475 [INFO] [restartedMain] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 283] Root WebApplicationContext: initialization completed in 1903 ms
+2019-11-20 15:34:32,112 [WARN] [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java : 557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'ypUserMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ypUserMapper' defined in file [/Users/msl/work/springboot/springboot-demo/build/classes/java/main/com/msl/mybatis/mapper/YpUserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+2019-11-20 15:34:32,116 [INFO] [restartedMain] org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Stopping service [Tomcat]
+2019-11-20 15:34:32,130 [INFO] [restartedMain] o.s.b.a.logging.ConditionEvaluationReportLoggingListener [ConditionEvaluationReportLoggingListener.java : 135] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-20 15:34:32,141 [ERROR] [restartedMain] org.springframework.boot.SpringApplication [SpringApplication.java : 821] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'ypUserMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ypUserMapper' defined in file [/Users/msl/work/springboot/springboot-demo/build/classes/java/main/com/msl/mybatis/mapper/YpUserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.msl.great.GreatApplication.main(GreatApplication.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ypUserMapper' defined in file [/Users/msl/work/springboot/springboot-demo/build/classes/java/main/com/msl/mybatis/mapper/YpUserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1395)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1500)
+	... 35 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 48 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:596)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:475)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:616)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:180)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$9133ea58.CGLIB$sqlSessionFactory$2(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$9133ea58$$FastClassBySpringCGLIB$$6a24bde5.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$9133ea58.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 49 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/msl/work/springboot/springboot-demo/build/resources/main/mybatisxml/OrgMslMapper.xml]'. Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:122)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:94)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:594)
+	... 62 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.msl.mybatis.mapper.OrgMslMapper.BaseResultMap
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:947)
+	at org.apache.ibatis.session.Configuration$StrictMap.put(Configuration.java:903)
+	at org.apache.ibatis.session.Configuration.addResultMap(Configuration.java:660)
+	at org.apache.ibatis.builder.MapperBuilderAssistant.addResultMap(MapperBuilderAssistant.java:209)
+	at org.apache.ibatis.builder.ResultMapResolver.resolve(ResultMapResolver.java:47)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:289)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:253)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:245)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118)
+	... 64 common frames omitted
+2019-11-20 15:36:26,285 [INFO] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 50] Starting GreatApplication on msldeMacBook-Pro.local with PID 12063 (/Users/msl/work/springboot/springboot-demo/build/classes/java/main started by msl in /Users/msl/work/springboot/springboot-demo)
+2019-11-20 15:36:26,290 [DEBUG] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-11-20 15:36:26,291 [INFO] [restartedMain] com.msl.great.GreatApplication [SpringApplication.java : 650] The following profiles are active: dev
+2019-11-20 15:36:26,464 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 15:36:26,465 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-20 15:36:27,288 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 15:36:27,292 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 15:36:27,332 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2019-11-20 15:36:27,841 [INFO] [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7947258] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:36:28,194 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 90] Tomcat initialized with port(s): 8081 (http)
+2019-11-20 15:36:28,222 [INFO] [restartedMain] org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2019-11-20 15:36:28,222 [INFO] [restartedMain] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-11-20 15:36:28,319 [INFO] [restartedMain] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/spring-boot] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2019-11-20 15:36:28,320 [INFO] [restartedMain] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 283] Root WebApplicationContext: initialization completed in 1852 ms
+2019-11-20 15:36:30,128 [INFO] [restartedMain] o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 15:36:30,768 [INFO] [restartedMain] o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 57] LiveReload server is running on port 35729
+2019-11-20 15:36:30,860 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 202] Tomcat started on port(s): 8081 (http) with context path '/spring-boot'
+2019-11-20 15:36:30,863 [INFO] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 59] Started GreatApplication in 5.673 seconds (JVM running for 6.741)
+2019-11-20 15:36:30,919 [INFO] [restartedMain] com.msl.netty.NettyServer [NettyServer.java : 38] 服务器启动开始监听端口: 8090
+2019-11-20 15:36:45,503 [INFO] [Thread-20] o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 208] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 15:46:12,982 [INFO] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 50] Starting GreatApplication on msldeMacBook-Pro.local with PID 12340 (/Users/msl/work/springboot/springboot-demo/build/classes/java/main started by msl in /Users/msl/work/springboot/springboot-demo)
+2019-11-20 15:46:12,986 [DEBUG] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-11-20 15:46:12,986 [INFO] [restartedMain] com.msl.great.GreatApplication [SpringApplication.java : 650] The following profiles are active: dev
+2019-11-20 15:46:13,105 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 15:46:13,109 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-20 15:46:13,979 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 15:46:13,984 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 15:46:14,032 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 25ms. Found 0 repository interfaces.
+2019-11-20 15:46:14,579 [INFO] [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b6c7f520] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:46:15,004 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 90] Tomcat initialized with port(s): 8081 (http)
+2019-11-20 15:46:15,033 [INFO] [restartedMain] org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2019-11-20 15:46:15,034 [INFO] [restartedMain] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-11-20 15:46:15,139 [INFO] [restartedMain] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/spring-boot] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2019-11-20 15:46:15,140 [INFO] [restartedMain] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 283] Root WebApplicationContext: initialization completed in 2031 ms
+2019-11-20 15:46:17,491 [INFO] [restartedMain] o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 15:46:18,330 [INFO] [restartedMain] o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 57] LiveReload server is running on port 35729
+2019-11-20 15:46:18,431 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 202] Tomcat started on port(s): 8081 (http) with context path '/spring-boot'
+2019-11-20 15:46:18,435 [INFO] [restartedMain] com.msl.great.GreatApplication [StartupInfoLogger.java : 59] Started GreatApplication in 6.092 seconds (JVM running for 7.525)
+2019-11-20 15:46:18,504 [INFO] [restartedMain] com.msl.netty.NettyServer [NettyServer.java : 38] 服务器启动开始监听端口: 8090
+2019-11-20 15:46:41,327 [INFO] [restartedMain] com.msl.great.ClientApplication [StartupInfoLogger.java : 50] Starting ClientApplication on msldeMacBook-Pro.local with PID 12353 (/Users/msl/work/springboot/nettySpringbootClient/build/classes/java/main started by msl in /Users/msl/work/springboot/springboot-demo)
+2019-11-20 15:46:41,386 [DEBUG] [restartedMain] com.msl.great.ClientApplication [StartupInfoLogger.java : 53] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-11-20 15:46:41,388 [INFO] [restartedMain] com.msl.great.ClientApplication [SpringApplication.java : 650] The following profiles are active: dev
+2019-11-20 15:46:41,483 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 15:46:41,484 [INFO] [restartedMain] o.s.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java : 225] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-20 15:46:42,300 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-11-20 15:46:42,303 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 15:46:42,344 [INFO] [restartedMain] o.s.data.repository.config.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 182] Finished Spring Data repository scanning in 23ms. Found 0 repository interfaces.
+2019-11-20 15:46:42,869 [INFO] [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java : 330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3e2af242] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:46:43,203 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 90] Tomcat initialized with port(s): 8082 (http)
+2019-11-20 15:46:43,226 [INFO] [restartedMain] org.apache.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2019-11-20 15:46:43,226 [INFO] [restartedMain] org.apache.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-11-20 15:46:43,309 [INFO] [restartedMain] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/spring-boot] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2019-11-20 15:46:43,309 [INFO] [restartedMain] org.springframework.web.context.ContextLoader [ServletWebServerApplicationContext.java : 283] Root WebApplicationContext: initialization completed in 1825 ms
+2019-11-20 15:46:45,769 [INFO] [restartedMain] o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 171] Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 15:46:46,683 [WARN] [restartedMain] o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer [OptionalLiveReloadServer.java : 60] Unable to start LiveReload server
+2019-11-20 15:46:46,796 [INFO] [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [TomcatWebServer.java : 202] Tomcat started on port(s): 8082 (http) with context path '/spring-boot'
+2019-11-20 15:46:46,801 [INFO] [restartedMain] com.msl.great.ClientApplication [StartupInfoLogger.java : 59] Started ClientApplication in 6.359 seconds (JVM running for 7.27)
+2019-11-20 15:46:46,881 [INFO] [restartedMain] com.msl.netty.NettyClient [NettyClient.java : 28] 客户端成功....
+2019-11-20 15:46:46,881 [INFO] [nioEventLoopGroup-4-1] com.msl.netty.NettyClientHandler [NettyClientHandler.java : 16] 客户端Active .....
+2019-11-20 15:46:46,928 [INFO] [nioEventLoopGroup-5-1] com.msl.netty.NettyServerHandler [NettyServerHandler.java : 19] Channel active......
+2019-11-20 15:46:46,983 [INFO] [nioEventLoopGroup-5-1] com.msl.netty.NettyServerHandler [NettyServerHandler.java : 27] 服务器收到消息: 你好啊
+2019-11-20 15:46:46,993 [INFO] [nioEventLoopGroup-4-1] com.msl.netty.NettyClientHandler [NettyClientHandler.java : 21] 客户端收到消息: 你也好哦
+2019-11-20 15:47:10,921 [INFO] [Thread-19] o.s.scheduling.concurrent.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 208] Shutting down ExecutorService 'applicationTaskExecutor'
